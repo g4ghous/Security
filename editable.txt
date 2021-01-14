@@ -1,0 +1,475 @@
+FORMS
+
+$('#submit-editable').hide();
+
+
+
+<!----------------------------------Editable----------------------------------------------------------------->
+<form action="" method="POST" id="submit-editable">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3" data-toggle="collapse" data-target="#experience" aria-expanded="true"
+                     aria-controls="collapseOne">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        Experience Info (8 of 8)
+                    </h6>
+                </div>
+                <div id="editable" class="card-body  ">
+                    
+
+                    <div class="form-group row">
+
+                        <div class="col-sm-12">
+                            <label class=" col-form-label" for="weapon">Weapon #</label>
+                            <textarea name="weapon" value="{{ old('weapon') }}" type="text" rows="2" cols="50"
+                                    class="form-control" placeholder="XXXXX"></textarea>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class=" col-form-label" for="bore">Weapon Bore</label>
+                            <textarea name="bore" value="{{ old('bore') }}" type="text" rows="2" cols="50"
+                                    class="form-control" placeholder="XXXXX"></textarea>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class=" col-form-label" for="bullets">Bullets</label>
+                            <textarea name="bullets" value="{{ old('bullets') }}" type="text" rows="2" cols="50"
+                                    class="form-control" placeholder="XXXXX"></textarea>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr class="bg-gradient-light">
+                                <th>Location</th>
+                                <th>Salary</th>
+                                <th>From</th>
+                                <th>to</th>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td><input name="location1" value="{{ old('location1') }}" type="text"
+                                           class="form-control" required placeholder="location"></td>
+                                <td><input name="salary1" value="{{ old('salary1') }}" type="text"
+                                           class="form-control" required placeholder="salary"></td>
+                                <td><input name="from1" value="{{ old('from1') }}" type="date" class="form-control"
+                                           required placeholder="From"></td>
+                                <td><input name="to1" value="{{ old('to1') }}" type="date" class="form-control" required
+                                           placeholder="To"></td>
+
+                            </tr>
+                            <tr>
+                                <td><input name="location2" value="{{ old('location2') }}" type="text"
+                                           class="form-control" placeholder="location"></td>
+                                <td><input name="salary2" value="{{ old('salary2') }}" type="text"
+                                           class="form-control" placeholder="salary"></td>
+                                <td><input name="from2" value="{{ old('from2') }}" type="date" class="form-control"
+                                           placeholder="From"></td>
+                                <td><input name="to2" value="{{ old('to2') }}" type="date" class="form-control"
+                                           placeholder="To"></td>
+
+                            </tr>
+                            <tr>
+                                <td><input name="location3" value="{{ old('location3') }}" type="text"
+                                           class="form-control" placeholder="location"></td>
+                                <td><input name="salary3" type="text" class="form-control" placeholder="salary">
+                                </td>
+                                <td><input name="from3" value="{{ old('from3') }}" type="date" class="form-control"
+                                           placeholder="From"></td>
+                                <td><input name="to3" value="{{ old('to3') }}" type="date" class="form-control"
+                                           placeholder="To"></td>
+
+                            </tr>
+                            <tr>
+                                <td><input name="location4" value="{{ old('location4') }}" type="text"
+                                           class="form-control" placeholder="location"></td>
+                                <td><input name="salary4" type="text" class="form-control" placeholder="salary">
+                                </td>
+                                <td><input name="from4" value="{{ old('from4') }}" type="date" class="form-control"
+                                           placeholder="From"></td>
+                                <td><input name="to4" value="{{ old('to4') }}" type="date" class="form-control"
+                                           placeholder="To"></td>
+
+                            </tr>
+                            <tr>
+                                <td><input name="location5" value="{{ old('location5') }}" type="text"
+                                           class="form-control" placeholder="location"></td>
+                                <td><input name="salary5" type="text" class="form-control" placeholder="salary">
+                                </td>
+                                <td><input name="from5" value="{{ old('from5') }}" type="date" class="form-control"
+                                           placeholder="From"></td>
+                                <td><input name="to5" value="{{ old('to5') }}" type="date" class="form-control"
+                                           placeholder="To"></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-lg-4 offset-8">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">SAVE</button>
+                            <br>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+HOME
+
+
+$('#submit-editable')[0].reset();
+
+
+ $("#submit-editable").submit(function (e) {
+
+
+        e.preventDefault();
+        Pace.start();
+
+
+       
+
+        var weapon=$("input[name=weapon]").val();
+        var bore=$("input[name=bore]").val();
+        var bullets=$("input[name=bullets]").val();
+        var location1 = $("input[name=location1]").val();
+        var salary1 = $("input[name=salary1]").val();
+        var from1 = $("input[name=from1]").val();
+        var to1 = $("input[name=to1]").val();
+        ;
+        var location2 = $("input[name=location2]").val();
+        var salary2 = $("input[name=salary2]").val();
+        var from2 = $("input[name=from2]").val();
+        var to2 = $("input[name=to2]").val();
+        ;
+        var location3 = $("input[name=location3]").val();
+        var salary3 = $("input[name=salary3]").val();
+        var from3 = $("input[name=from3]").val();
+        var to3 = $("input[name=to3]").val();
+        ;
+        var location4 = $("input[name=location4]").val();
+        var salary4 = $("input[name=salary4]").val();
+        var from4 = $("input[name=from4]").val();
+        var to4 = $("input[name=to4]").val();
+        ;
+        var location5 = $("input[name=location5]").val();
+        var salary5 = $("input[name=salary5]").val();
+        var from5 = $("input[name=from5]").val();
+        var to5 = $("input[name=to5]").val();
+
+
+        console.log({weapon: weapon, bore:bore, bullets:bullets,
+             location1: location1, salary1: salary1, from1: from1, to1: to1,
+            location2: location2, salary2: salary2, from2: from2, to2: to2,
+            location3: location3, salary3: salary3, from3: from3, to3: to3,
+            location4: location4, salary4: salary4, from4: from4, to4: to4,
+            location5: location5, salary5: salary5, from5: from5, to5: to5
+        });
+
+
+        $.ajax({
+
+            type: 'POST',
+
+            url: '/home/save_experience',
+
+            data: {
+                weapon: weapon, bore:bore, bullets:bullets,
+                 location1: location1, salary1: salary1, from1: from1, to1: to1,
+                location2: location2, salary2: salary2, from2: from2, to2: to2,
+                location3: location3, salary3: salary3, from3: from3, to3: to3,
+                location4: location4, salary4: salary4, from4: from4, to4: to4,
+                location5: location5, salary5: salary5, from5: from5, to5: to5
+            },
+
+
+            success: function (data) {
+
+                console.log(data.status);
+                if (data.status == 'error') {
+                    console.log(data.error);
+                    notify_me('Error !!',data.error,'red');
+                } else if (data.status == 'val_errors') {
+                    console.log(data.errors);
+                    notify_me('Error !!',data.errors,'red');
+                } else if (data.status == 'success') {
+
+                    $('#submit-experience').hide();
+                    $('#submit-physical').show();
+                    //form_reset();
+                    //notify_me('SUCCESS','Data Entered Sucessfully !!','green');
+                } else {
+                    console.log(data.errors);
+                    notify_me('Something Went Worng !!',data.errors,'red');
+                }
+
+
+                Pace.stop();
+
+
+            }
+
+        });
+
+
+        });
+
+
+@elseif ($statusses['editable'] == 'N' ?? '')
+        $('#submit-editable').show();
+        $('#submit-bg').hide();
+
+
+
+EMPLOYEE CONTROLLER
+
+ $editable = [[
+                'employee_emp_id' => $emp_id,
+                'location' => request('location1'),
+                'salary' => request('salary1'),
+                'from' => request('from1'),
+                'to' => request('to1')
+            ]];
+
+            //array_push($editable,$editable1);
+            if (strlen(trim(request('location2'))) > 0 and strlen(trim(request('salary2'))) > 0 and
+                strlen(trim(request('from2'))) > 0 and strlen(trim(request('to2'))) > 0) {
+
+                $editable2 = [
+                    'employee_emp_id' => $emp_id,
+                    'location' => request('location2'),
+                    'salary' => request('salary2'),
+                    'from' => request('from2'),
+                    'to' => request('to2')
+                ];
+
+                array_push($editable, $editable2);
+
+            }
+
+            if (strlen(trim(request('location3'))) > 0 and strlen(trim(request('salary3'))) > 0 and
+                strlen(trim(request('from3'))) > 0 and strlen(trim(request('to3'))) > 0) {
+                $editable3 = [
+                    'employee_emp_id' => $emp_id,
+                    'location' => request('location3'),
+                    'salary' => request('salary3'),
+                    'from' => request('from3'),
+                    'to' => request('to3')
+                ];
+
+                array_push($editable, $editable3);
+
+            }
+
+            if (strlen(trim(request('location4'))) > 0 and strlen(trim(request('salary4'))) > 0 and
+                strlen(trim(request('from4'))) > 0 and strlen(trim(request('to4'))) > 0) {
+                $editable4 = [
+                    'employee_emp_id' => $emp_id,
+                    'location' => request('location4'),
+                    'salary' => request('salary4'),
+                    'from' => request('from4'),
+                    'to' => request('to4')
+                ];
+
+                array_push($editable, $editable4);
+            }
+
+            if (strlen(trim(request('location5'))) > 0 and strlen(trim(request('salary5'))) > 0 and
+                strlen(trim(request('from5'))) > 0 and strlen(trim(request('to5'))) > 0) {
+
+                $editable5 = [
+                    'employee_emp_id' => $emp_id,
+                    'location' => request('location5'),
+                    'salary' => request('salary5'),
+                    'from' => request('from5'),
+                    'to' => request('to5')
+                ];
+
+                array_push($editable, $editable5);
+            }
+
+
+            $emp->editable()->createMany($editable);
+
+
+  public function create_editable(Request $request) {
+
+        $emp_id = hash('sha256',request('cnic'));
+
+
+
+        $validator = Validator::make($request->all(),[
+            'cnic' => 'required',
+            'organization1' => 'required',
+            'position1' => 'required',
+            'from1' => 'required',
+            'to1' => 'required',
+
+        ]);
+
+
+        if ($validator->fails())
+        {
+            return response()->json(['status'=>'val_errors','errors'=>$validator->errors()->all()]);
+        }
+
+
+
+        try {
+
+            $editable = [[
+                'employee_emp_id' => $emp_id,
+                'location1' => request('location1'),
+                'salary1' => request('salary1'),
+                'from1' => request('from1'),
+                'to1' => request('to1'),
+                'location2' => request('location2'),
+                'salary2' => request('salary2'),
+                'from2' => request('from2'),
+                'to2' => request('to2'),
+                'location3' => request('location3'),
+                'salary3' => request('salary3'),
+                'from3' => request('from3'),
+                'to3' => request('to3'),
+                'location4' => request('location4'),
+                'salary4' => request('salary4'),
+                'from4' => request('from4'),
+                'to4' => request('to4'),
+                'location5' => request('location5'),
+                'salary5' => request('salary5'),
+                'from5' => request('from5'),
+                'to5' => request('to5'),
+                
+            ]];
+
+            //array_push($experience,$experience1);
+            // if (strlen(trim(request('organization2'))) > 0 and strlen(trim(request('position2'))) > 0 and
+            //     strlen(trim(request('from2'))) > 0 and strlen(trim(request('to2'))) > 0) {
+
+            //     $experience2 = [
+            //         'employee_emp_id' => $emp_id,
+            //         'organization2' => request('organization2'),
+            //         'position2' => request('position2'),
+            //         'from2' => request('from2'),
+            //         'to2' => request('to2')
+            //     ];
+
+            //     array_push($experience, $experience2);
+
+            // }
+
+            // if (strlen(trim(request('organization3'))) > 0 and strlen(trim(request('position3'))) > 0 and
+            //     strlen(trim(request('from3'))) > 0 and strlen(trim(request('to3'))) > 0) {
+            //     $experience3 = [
+            //         'employee_emp_id' => $emp_id,
+            //         'organization' => request('organization3'),
+            //         'position' => request('position3'),
+            //         'from' => request('from3'),
+            //         'to' => request('to3')
+            //     ];
+
+            //     array_push($experience, $experience3);
+
+            // }
+
+            // if (strlen(trim(request('organization4'))) > 0 and strlen(trim(request('position4'))) > 0 and
+            //     strlen(trim(request('from4'))) > 0 and strlen(trim(request('to4'))) > 0) {
+            //     $experience4 = [
+            //         'employee_emp_id' => $emp_id,
+            //         'organization' => request('organization4'),
+            //         'position' => request('position4'),
+            //         'from' => request('from4'),
+            //         'to' => request('to4')
+            //     ];
+
+            //     array_push($experience, $experience4);
+            // }
+
+            // if (strlen(trim(request('organization5'))) > 0 and strlen(trim(request('position5'))) > 0 and
+            //     strlen(trim(request('from5'))) > 0 and strlen(trim(request('to5'))) > 0) {
+
+            //     $experience5 = [
+            //         'employee_emp_id' => $emp_id,
+            //         'organization' => request('organization5'),
+            //         'position' => request('position5'),
+            //         'from' => request('from5'),
+            //         'to' => request('to5')
+            //     ];
+
+            //     array_push($experience, $experience5);
+            // }
+
+
+            DB::beginTransaction();
+
+            $emp = Employee::find($emp_id);
+
+
+
+            $emp->experience()->createMany($editable);
+
+            $emp->status()->update(['editable'=>'Y']);
+
+            //dd($request->all();
+
+            DB::commit();
+
+            // dd($experience);
+            //return redirect('home')->with('status', 'emergency')->with('emp_id',$emp_id);
+            return response()->json(['status'=>'success']);
+        }
+        catch (\Exception $e){
+            // Rollback and then redirect
+            // back to form with errors
+            DB::rollback();
+            /*return redirect('home')
+                ->withErrors( $e->getMessage() )
+                ->withInput();*/
+
+            return response()->json(['status'=>'error','error'=>$e->getMessage()]);
+
+        }
+
+    }
+EDITABLE TABLE
+
+$table->bigIncrements('id');
+            $table->string('employee_emp_id',64);
+            $table->string('weapon',50);
+            $table->string('bore',50);
+            $table->string('bullets',50);
+            $table->string('location1',100);
+            $table->string('salary1',50);
+            $table->date('from1');
+            $table->date('to1',500);
+            $table->string('location2',100)->nullable();
+            $table->string('salary2',50)->nullable();
+            $table->date('from2')->nullable();
+            $table->date('to2',500)->nullable();
+            $table->string('location3',100)->nullable();
+            $table->string('salary3',50)->nullable();
+            $table->date('from3')->nullable();
+            $table->date('to3',500)->nullable();
+            $table->string('location4',100)->nullable();
+            $table->string('salary4',50)->nullable();
+            $table->date('from4')->nullable();
+            $table->date('to4',500)->nullable();
+            $table->string('location5',100)->nullable();
+            $table->string('salary5',50)->nullable();
+            $table->date('from5')->nullable();
+            $table->date('to5',500)->nullable();
+            $table->timestamps();
+            $table->foreign('employee_emp_id')->references('emp_id')->on('employees')->onDelete('cascade');
+        
